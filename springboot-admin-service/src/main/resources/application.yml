@@ -1,0 +1,31 @@
+server:
+  port: 8881
+spring:
+  application:
+    name: springboot-admin-service
+  security:
+    user:
+      name: admin
+      password: admin
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      config:
+        data-key: data
+        format: yaml
+        enabled: true
+      discovery:
+        discovery:
+          tags: management.context-path=/foo, health.path=/ping, user.name=user, user.password=password
+        instance-id: ${spring.application.name}:${server.port}
+#debug: true
+  profiles:
+    active:
+      - secure
+
+#  boot:
+#    admin:
+#      discovery:
+#      admin
+

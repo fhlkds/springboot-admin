@@ -1,0 +1,27 @@
+server:
+  port: 8891
+spring:
+  application:
+    name: springboot-admin-user
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      config:
+        format: yaml
+        data-key: data
+        enabled: true
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:8881
+        username: admin
+        password: admin
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: "*"
+  endpoint:
+    health:
+      show-details: always
