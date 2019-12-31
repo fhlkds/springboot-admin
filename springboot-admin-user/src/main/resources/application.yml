@@ -17,11 +17,12 @@ spring:
         url: http://127.0.0.1:8881
         username: admin
         password: admin
-  management:
-    endpoints:
-      web:
-        exposure:
-          include: "*"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
   endpoint:
     health:
       show-details: always
