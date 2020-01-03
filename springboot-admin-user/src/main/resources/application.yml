@@ -26,3 +26,6 @@ management:
   endpoint:
     health:
       show-details: always
+logging:
+  config: classpath:logback.xml
+  file: logs/log.log
